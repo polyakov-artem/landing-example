@@ -2267,7 +2267,7 @@ if (typeof Object.getPrototypeOf !== "function") {
 
 /***/ }),
 
-/***/ 696:
+/***/ 843:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10477,129 +10477,6 @@ var form_elements = __webpack_require__(106);
 var landing_page = __webpack_require__(970);
 // EXTERNAL MODULE: ./src/pages/search-room/search-room.js
 var search_room = __webpack_require__(627);
-// EXTERNAL MODULE: ./dev-tools/img-overlay/img-overlay.pug
-var img_overlay = __webpack_require__(578);
-var img_overlay_default = /*#__PURE__*/__webpack_require__.n(img_overlay);
-// EXTERNAL MODULE: ./dev-tools/dev-controls-block/dev-controls-block.pug
-var dev_controls_block = __webpack_require__(779);
-var dev_controls_block_default = /*#__PURE__*/__webpack_require__.n(dev_controls_block);
-;// CONCATENATED MODULE: ./dev-tools/dev-controls-block/dev-controls-block.js
-
-
-var devControlsBlock = document.querySelector('.dev-controls-block');
-
-if (!devControlsBlock) {
-  var html = dev_controls_block_default()({});
-  var fragment = document.createRange().createContextualFragment(html);
-  document.body.append(fragment);
-  console.log("dev controls box created");
-}
-;// CONCATENATED MODULE: ./dev-tools/img-overlay/img-overlay.js
-var _JSON$parse, _JSON$parse2;
-
-
-
-
-var VISIBILITY_KEY = 'screnshotIsVisible';
-var SCREENSHOT_KEY = 'screenshotNum';
-var imgOverlay = {
-  screnshotIsVisible: (_JSON$parse = JSON.parse(localStorage.getItem(VISIBILITY_KEY))) !== null && _JSON$parse !== void 0 ? _JSON$parse : false,
-  screenshotNum: (_JSON$parse2 = JSON.parse(localStorage.getItem(SCREENSHOT_KEY))) !== null && _JSON$parse2 !== void 0 ? _JSON$parse2 : 0,
-  init: function init() {
-    this.createDomElements();
-    this.setScreenshot(this.screenshotNum);
-    this.setVisibility(this.screnshotIsVisible);
-    if (this.select.value !== this.screenshotNum) this.select.value = this.screenshotNum;
-    this.bindEvents();
-  },
-  createDomElements: function createDomElements() {
-    var html = img_overlay_default()();
-    var fragment = document.createRange().createContextualFragment(html);
-    this.controls = fragment.querySelector('.img-overlay-controls');
-    this.btn = fragment.querySelector('.img-overlay-btn');
-    this.select = fragment.querySelector('.img-overlay-select');
-    this.images = fragment.querySelector('.img-overlay__images');
-    document.body.append(fragment);
-    document.querySelector('.dev-controls-block').append(this.controls);
-  },
-  setScreenshot: function setScreenshot(num) {
-    var activeImg = document.querySelector('.img-overlay__img_is_active');
-    var nextImg = document.querySelector("[data-img-num=\"".concat(num, "\"]"));
-    if (activeImg) activeImg.classList.remove('img-overlay__img_is_active');
-    if (nextImg) nextImg.classList.add('img-overlay__img_is_active');
-    this.screenshotNum = num;
-    localStorage.setItem(SCREENSHOT_KEY, num);
-  },
-  bindEvents: function bindEvents() {
-    var _this = this;
-
-    this.btn.addEventListener('click', function (e) {
-      _this.setVisibility(!_this.screnshotIsVisible);
-    });
-    this.select.addEventListener('change', function (_ref) {
-      var value = _ref.target.value;
-
-      _this.setScreenshot(value);
-    });
-  },
-  setVisibility: function setVisibility(isVisible) {
-    this.screnshotIsVisible = isVisible, localStorage.setItem(VISIBILITY_KEY, isVisible);
-
-    if (isVisible) {
-      this.images.classList.remove('img-overlay__images_are_hidden');
-    } else {
-      this.images.classList.add('img-overlay__images_are_hidden');
-    }
-
-    ;
-  }
-};
-imgOverlay.init();
-;// CONCATENATED MODULE: ./dev-tools/blocks-outline/blocks-outline-style.js
-var style = "\n  body *:not(.dev-controls-block) {\n    outline-offset: -2px;\n    outline-style: dashed; \n    outline-width: 2px; \n  }\n  body > *:not(.dev-controls-block) {\n    outline-color: black; \n  }\n  body > *:not(.dev-controls-block) > * {\n    outline-color: fuchsia; \n  }\n  body > *:not(.dev-controls-block) > * > * {\n    outline-color: purple; \n  }\n  body > *:not(.dev-controls-block) > * > * > * {\n    outline-color: red; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * {\n    outline-color: maroon; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * {\n    outline-color: #FF4500; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * {\n    outline-color: olive; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * > * {\n    outline-color: lime; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * > * > * {\n    outline-color: aqua; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * > * > * > * {\n    outline-color: teal; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * > * > * > * > * {\n    outline-color: blue; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * > * > * > * > * > * {\n    outline-color: navy; \n  }\n  body > *:not(.dev-controls-block) > * > * > * > * > * > * > * > * > * > * > * > * {\n    outline-color: #4B0082; \n  }";
-/* harmony default export */ var blocks_outline_style = (style);
-// EXTERNAL MODULE: ./dev-tools/blocks-outline/blocks-outline.pug
-var blocks_outline = __webpack_require__(314);
-var blocks_outline_default = /*#__PURE__*/__webpack_require__.n(blocks_outline);
-;// CONCATENATED MODULE: ./dev-tools/blocks-outline/blocks-outline.js
-var blocks_outline_JSON$parse, _blocksOutline;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var blocks_outline_VISIBILITY_KEY = 'outlineIsHidden';
-var blocksOutline = (_blocksOutline = {}, _defineProperty(_blocksOutline, blocks_outline_VISIBILITY_KEY, (blocks_outline_JSON$parse = JSON.parse(localStorage.getItem(blocks_outline_VISIBILITY_KEY))) !== null && blocks_outline_JSON$parse !== void 0 ? blocks_outline_JSON$parse : true), _defineProperty(_blocksOutline, "init", function init() {
-  this.createDomElements();
-  this.createStyle();
-  this.bindEvents();
-}), _defineProperty(_blocksOutline, "createDomElements", function createDomElements() {
-  var html = blocks_outline_default()({});
-  var fragment = document.createRange().createContextualFragment(html);
-  document.querySelector('.dev-controls-block').append(fragment);
-}), _defineProperty(_blocksOutline, "createStyle", function createStyle() {
-  this.style = document.createElement('style');
-  this.style.appendChild(document.createTextNode(blocks_outline_style));
-  if (this[blocks_outline_VISIBILITY_KEY]) this.style.setAttribute('media', "max-width: 1px");
-  document.head.append(this.style);
-}), _defineProperty(_blocksOutline, "bindEvents", function bindEvents() {
-  var _this = this;
-
-  document.querySelector('.blocks-outline-btn').addEventListener('click', function (e) {
-    _this.toggleOutline();
-  });
-}), _defineProperty(_blocksOutline, "toggleOutline", function toggleOutline() {
-  this[blocks_outline_VISIBILITY_KEY] = !this[blocks_outline_VISIBILITY_KEY], localStorage.setItem(blocks_outline_VISIBILITY_KEY, this[blocks_outline_VISIBILITY_KEY]);
-
-  if (this.style.hasAttribute('media')) {
-    this.style.removeAttribute('media');
-  } else {
-    this.style.setAttribute('media', "max-width: 1px");
-  }
-}), _blocksOutline);
-blocksOutline.init();
 ;// CONCATENATED MODULE: ./src/app.js
 // Styles
  // Common  Js
@@ -10612,9 +10489,9 @@ blocksOutline.init();
 
 
  // Dev-tools
-
-
- // SVG images
+// import '~dev-tools/img-overlay/img-overlay'
+// import '~dev-tools/blocks-outline/blocks-outline'
+// SVG images
 
 js_importAll(__webpack_require__(819));
 
@@ -27490,400 +27367,6 @@ return jQuery;
 
 /***/ }),
 
-/***/ 314:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var pug = __webpack_require__(55);
-
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html + "\u003Cbutton class=\"blocks-outline-btn\"\u003EToggle blocks outline\u003C\u002Fbutton\u003E";;return pug_html;};
-module.exports = template;
-
-/***/ }),
-
-/***/ 779:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var pug = __webpack_require__(55);
-
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html + "\u003Cdiv class=\"dev-controls-block\"\u003E\u003C\u002Fdiv\u003E";;return pug_html;};
-module.exports = template;
-
-/***/ }),
-
-/***/ 578:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-var pug = __webpack_require__(55);
-
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
-    var locals_for_with = (locals || {});
-    
-    (function (screenshots) {
-      var screenshots = [
-  'Cards.jpg',
-  'Colors & Type.jpg',
-  'Filter.jpg',
-  'Form Elements.jpg',
-  'Headers & Footers.jpg',
-  'Landing page.jpg',
-  'Preferences Dropdown.jpg',
-  'Preferences Expandable Checkbox list.jpg',
-  'Registration.jpg',
-  'Room details.jpg',
-  'Sign in.jpg',
-]
-
-pug_html = pug_html + "\u003Cdiv class=\"img-overlay\"\u003E\u003Cdiv class=\"img-overlay-controls\"\u003E\u003Cbutton class=\"img-overlay-btn\"\u003EToggle img-overlay\u003C\u002Fbutton\u003E\u003Cselect class=\"img-overlay-select\"\u003E";
-// iterate screenshots
-;(function(){
-  var $$obj = screenshots;
-  if ('number' == typeof $$obj.length) {
-      for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
-        var fileName = $$obj[index];
-pug_html = pug_html + "\u003Coption" + (pug.attr("value", index, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = fileName) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var index in $$obj) {
-      $$l++;
-      var fileName = $$obj[index];
-pug_html = pug_html + "\u003Coption" + (pug.attr("value", index, true, true)) + "\u003E" + (pug.escape(null == (pug_interp = fileName) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
-    }
-  }
-}).call(this);
-
-pug_html = pug_html + "\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"img-overlay__images img-overlay__images_are_hidden\"\u003E";
-// iterate screenshots
-;(function(){
-  var $$obj = screenshots;
-  if ('number' == typeof $$obj.length) {
-      for (var index = 0, $$l = $$obj.length; index < $$l; index++) {
-        var fileName = $$obj[index];
-if (index == 0) {
-pug_html = pug_html + "\u003Cimg" + (" class=\"img-overlay__img img-overlay__img_is_active\""+pug.attr("src", `../../dev-tools/img-overlay/screenshots/${fileName}`, true, true)+pug.attr("data-img-num", index, true, true)) + "\u003E";
-}
-else {
-pug_html = pug_html + "\u003Cimg" + (" class=\"img-overlay__img\""+pug.attr("src", `../../dev-tools/img-overlay/screenshots/${fileName}`, true, true)+pug.attr("data-img-num", index, true, true)) + "\u003E";
-}
-      }
-  } else {
-    var $$l = 0;
-    for (var index in $$obj) {
-      $$l++;
-      var fileName = $$obj[index];
-if (index == 0) {
-pug_html = pug_html + "\u003Cimg" + (" class=\"img-overlay__img img-overlay__img_is_active\""+pug.attr("src", `../../dev-tools/img-overlay/screenshots/${fileName}`, true, true)+pug.attr("data-img-num", index, true, true)) + "\u003E";
-}
-else {
-pug_html = pug_html + "\u003Cimg" + (" class=\"img-overlay__img\""+pug.attr("src", `../../dev-tools/img-overlay/screenshots/${fileName}`, true, true)+pug.attr("data-img-num", index, true, true)) + "\u003E";
-}
-    }
-  }
-}).call(this);
-
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
-    }.call(this, "screenshots" in locals_for_with ?
-        locals_for_with.screenshots :
-        typeof screenshots !== 'undefined' ? screenshots : undefined));
-    ;;return pug_html;};
-module.exports = template;
-
-/***/ }),
-
-/***/ 55:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var pug_has_own_property = Object.prototype.hasOwnProperty;
-
-/**
- * Merge two attribute objects giving precedence
- * to values in object `b`. Classes are special-cased
- * allowing for arrays and merging/joining appropriately
- * resulting in a string.
- *
- * @param {Object} a
- * @param {Object} b
- * @return {Object} a
- * @api private
- */
-
-exports.merge = pug_merge;
-function pug_merge(a, b) {
-  if (arguments.length === 1) {
-    var attrs = a[0];
-    for (var i = 1; i < a.length; i++) {
-      attrs = pug_merge(attrs, a[i]);
-    }
-    return attrs;
-  }
-
-  for (var key in b) {
-    if (key === 'class') {
-      var valA = a[key] || [];
-      a[key] = (Array.isArray(valA) ? valA : [valA]).concat(b[key] || []);
-    } else if (key === 'style') {
-      var valA = pug_style(a[key]);
-      valA = valA && valA[valA.length - 1] !== ';' ? valA + ';' : valA;
-      var valB = pug_style(b[key]);
-      valB = valB && valB[valB.length - 1] !== ';' ? valB + ';' : valB;
-      a[key] = valA + valB;
-    } else {
-      a[key] = b[key];
-    }
-  }
-
-  return a;
-}
-
-/**
- * Process array, object, or string as a string of classes delimited by a space.
- *
- * If `val` is an array, all members of it and its subarrays are counted as
- * classes. If `escaping` is an array, then whether or not the item in `val` is
- * escaped depends on the corresponding item in `escaping`. If `escaping` is
- * not an array, no escaping is done.
- *
- * If `val` is an object, all the keys whose value is truthy are counted as
- * classes. No escaping is done.
- *
- * If `val` is a string, it is counted as a class. No escaping is done.
- *
- * @param {(Array.<string>|Object.<string, boolean>|string)} val
- * @param {?Array.<string>} escaping
- * @return {String}
- */
-exports.classes = pug_classes;
-function pug_classes_array(val, escaping) {
-  var classString = '',
-    className,
-    padding = '',
-    escapeEnabled = Array.isArray(escaping);
-  for (var i = 0; i < val.length; i++) {
-    className = pug_classes(val[i]);
-    if (!className) continue;
-    escapeEnabled && escaping[i] && (className = pug_escape(className));
-    classString = classString + padding + className;
-    padding = ' ';
-  }
-  return classString;
-}
-function pug_classes_object(val) {
-  var classString = '',
-    padding = '';
-  for (var key in val) {
-    if (key && val[key] && pug_has_own_property.call(val, key)) {
-      classString = classString + padding + key;
-      padding = ' ';
-    }
-  }
-  return classString;
-}
-function pug_classes(val, escaping) {
-  if (Array.isArray(val)) {
-    return pug_classes_array(val, escaping);
-  } else if (val && typeof val === 'object') {
-    return pug_classes_object(val);
-  } else {
-    return val || '';
-  }
-}
-
-/**
- * Convert object or string to a string of CSS styles delimited by a semicolon.
- *
- * @param {(Object.<string, string>|string)} val
- * @return {String}
- */
-
-exports.style = pug_style;
-function pug_style(val) {
-  if (!val) return '';
-  if (typeof val === 'object') {
-    var out = '';
-    for (var style in val) {
-      /* istanbul ignore else */
-      if (pug_has_own_property.call(val, style)) {
-        out = out + style + ':' + val[style] + ';';
-      }
-    }
-    return out;
-  } else {
-    return val + '';
-  }
-}
-
-/**
- * Render the given attribute.
- *
- * @param {String} key
- * @param {String} val
- * @param {Boolean} escaped
- * @param {Boolean} terse
- * @return {String}
- */
-exports.attr = pug_attr;
-function pug_attr(key, val, escaped, terse) {
-  if (
-    val === false ||
-    val == null ||
-    (!val && (key === 'class' || key === 'style'))
-  ) {
-    return '';
-  }
-  if (val === true) {
-    return ' ' + (terse ? key : key + '="' + key + '"');
-  }
-  var type = typeof val;
-  if (
-    (type === 'object' || type === 'function') &&
-    typeof val.toJSON === 'function'
-  ) {
-    val = val.toJSON();
-  }
-  if (typeof val !== 'string') {
-    val = JSON.stringify(val);
-    if (!escaped && val.indexOf('"') !== -1) {
-      return ' ' + key + "='" + val.replace(/'/g, '&#39;') + "'";
-    }
-  }
-  if (escaped) val = pug_escape(val);
-  return ' ' + key + '="' + val + '"';
-}
-
-/**
- * Render the given attributes object.
- *
- * @param {Object} obj
- * @param {Object} terse whether to use HTML5 terse boolean attributes
- * @return {String}
- */
-exports.attrs = pug_attrs;
-function pug_attrs(obj, terse) {
-  var attrs = '';
-
-  for (var key in obj) {
-    if (pug_has_own_property.call(obj, key)) {
-      var val = obj[key];
-
-      if ('class' === key) {
-        val = pug_classes(val);
-        attrs = pug_attr(key, val, false, terse) + attrs;
-        continue;
-      }
-      if ('style' === key) {
-        val = pug_style(val);
-      }
-      attrs += pug_attr(key, val, false, terse);
-    }
-  }
-
-  return attrs;
-}
-
-/**
- * Escape the given string of `html`.
- *
- * @param {String} html
- * @return {String}
- * @api private
- */
-
-var pug_match_html = /["&<>]/;
-exports.escape = pug_escape;
-function pug_escape(_html) {
-  var html = '' + _html;
-  var regexResult = pug_match_html.exec(html);
-  if (!regexResult) return _html;
-
-  var result = '';
-  var i, lastIndex, escape;
-  for (i = regexResult.index, lastIndex = 0; i < html.length; i++) {
-    switch (html.charCodeAt(i)) {
-      case 34:
-        escape = '&quot;';
-        break;
-      case 38:
-        escape = '&amp;';
-        break;
-      case 60:
-        escape = '&lt;';
-        break;
-      case 62:
-        escape = '&gt;';
-        break;
-      default:
-        continue;
-    }
-    if (lastIndex !== i) result += html.substring(lastIndex, i);
-    lastIndex = i + 1;
-    result += escape;
-  }
-  if (lastIndex !== i) return result + html.substring(lastIndex, i);
-  else return result;
-}
-
-/**
- * Re-throw the given `err` in context to the
- * the pug in `filename` at the given `lineno`.
- *
- * @param {Error} err
- * @param {String} filename
- * @param {String} lineno
- * @param {String} str original source
- * @api private
- */
-
-exports.rethrow = pug_rethrow;
-function pug_rethrow(err, filename, lineno, str) {
-  if (!(err instanceof Error)) throw err;
-  if ((typeof window != 'undefined' || !filename) && !str) {
-    err.message += ' on line ' + lineno;
-    throw err;
-  }
-  var context, lines, start, end;
-  try {
-    str = str || __webpack_require__(835).readFileSync(filename, {encoding: 'utf8'});
-    context = 3;
-    lines = str.split('\n');
-    start = Math.max(lineno - context, 0);
-    end = Math.min(lines.length, lineno + context);
-  } catch (ex) {
-    err.message +=
-      ' - could not read from ' + filename + ' (' + ex.message + ')';
-    pug_rethrow(err, null, lineno);
-    return;
-  }
-
-  // Error context
-  context = lines
-    .slice(start, end)
-    .map(function(line, i) {
-      var curr = i + start + 1;
-      return (curr == lineno ? '  > ' : '    ') + curr + '| ' + line;
-    })
-    .join('\n');
-
-  // Alter exception message
-  err.path = filename;
-  try {
-    err.message =
-      (filename || 'Pug') +
-      ':' +
-      lineno +
-      '\n' +
-      context +
-      '\n\n' +
-      err.message;
-  } catch (e) {}
-  throw err;
-}
-
-
-/***/ }),
-
 /***/ 854:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
@@ -28246,7 +27729,7 @@ var result = _node_modules_svg_sprite_loader_runtime_browser_sprite_build_js__WE
 
 /***/ }),
 
-/***/ 323:
+/***/ 835:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29553,7 +29036,7 @@ var map = {
 	"./city.svg": 198,
 	"./emoticon.svg": 717,
 	"./expand-more.svg": 368,
-	"./facebook.svg": 323,
+	"./facebook.svg": 835,
 	"./favorite-purple-borders.svg": 394,
 	"./favorite-purple.svg": 76,
 	"./instagram.svg": 514,
@@ -29587,13 +29070,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 819;
-
-/***/ }),
-
-/***/ 835:
-/***/ (function() {
-
-/* (ignored) */
 
 /***/ })
 
@@ -29686,7 +29162,7 @@ webpackContext.id = 819;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(696);
+/******/ 	var __webpack_exports__ = __webpack_require__(843);
 /******/ 	
 /******/ })()
 ;
