@@ -1,0 +1,25 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.counter {
+  display: inline-flex;
+  flex-wrap: nowrap;
+
+  &__control {
+    flex: 1 1 auto;
+    width: rem(32px);
+    font-weight: bold;
+    font-size: rem(12px);
+    color: $dark;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__btn {
+    flex: 0 0 auto;
+  }
+}

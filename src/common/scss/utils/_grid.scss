@@ -1,0 +1,160 @@
+@mixin media-props ($media-props, $breakpoints: $breakpoints) {
+
+  @each $breakpoint,
+  $props in $media-props {
+    @include media-up($breakpoint, $breakpoints) {
+
+      @each $prop-name,
+      $prop-value in $props {
+        #{$prop-name}: $prop-value;
+      }
+    }
+  }
+}
+
+
+
+@mixin make-wrap($max-widths: $max-widths, $gutters: $gutters, $breakpoints: $breakpoints) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint,
+  $value in $breakpoints {
+    $wrap-max-width: map-get($max-widths, $breakpoint);
+    $gutter-width: map-get($gutters, $breakpoint);
+
+    @include media-up($breakpoint, $breakpoints) {
+      @if ($wrap-max-width !=null) {
+        max-width: $wrap-max-width;
+      }
+
+      @if ($gutter-width !=null) {
+        padding-right: $gutter-width / 2;
+        padding-left: $gutter-width / 2;
+      }
+    }
+  }
+}
+
+
+
+@mixin media-up($point, $breakpoints: $breakpoints) {
+  $breakpoint-value: map-get($breakpoints, $point);
+
+  @if (type-of($point)==number) {
+    @media (min-width: $point) {
+      @content;
+    }
+  }
+
+  @else if (type-of($point)==string and $breakpoint-value !=0) {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+
+
+@mixin media-down($point, $breakpoints: $breakpoints) {
+  $breakpoint-value: map-get($breakpoints, $point);
+
+  @if (type-of($point)==number) {
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (max-width: #{$breakpoint-value/1px-1}px) {
+      @content;
+    }
+  }
+}
+
+
+
+@mixin make-row($gutters: $gutters) {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $breakpoint-name,
+  $breakpoint-value in $gutters {
+
+    @include media-up($breakpoint-name) {
+      margin-right: -$breakpoint-value / 2;
+      margin-left: -$breakpoint-value / 2;
+    }
+  }
+}
+
+
+
+@mixin make-col-ready($gutters: $gutters) {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+
+  @each $breakpoint-name,
+  $breakpoint-value in $gutters {
+    @include media-up($breakpoint-name) {
+      padding-right: $breakpoint-value / 2;
+      padding-left: $breakpoint-value / 2;
+    }
+  }
+}
+
+
+
+@mixin make-media-col($sizes: (), $gutters: $gutters, $breakpoints: $breakpoints, $media-props: ()) {
+
+  @each $breakpoint,
+  $value in $breakpoints {
+
+    $size: map-get($sizes, $breakpoint);
+    $breakpoint-props: map-get($media-props, $breakpoint);
+
+    @include media-up($breakpoint, $breakpoints) {
+      @if ($size !=null) {
+        @if ($size==auto) {
+          flex: 0 0 auto;
+          width: auto;
+          max-width: 100%;
+        }
+
+        @else if ($size==grow) {
+          flex: 1 1 0;
+          max-width: 100%;
+        }
+
+        @else {
+          flex: 0 0 norm-val($size);
+          max-width: norm-val($size);
+        }
+      }
+
+      @if ($breakpoint-props !=null) {
+
+        @each $prop-name,
+        $prop-value in $breakpoint-props {
+          #{$prop-name}: $prop-value;
+        }
+      }
+    }
+  }
+}
+
+
+
+@function norm-val($val) {
+  @if (unitless($val)) {
+    $val: percentage($val)
+  };
+
+  @return $val
+}

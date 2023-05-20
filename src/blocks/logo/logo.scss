@@ -1,0 +1,7 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.logo {
+  width: rem(106px);
+  height: rem(40px);
+}

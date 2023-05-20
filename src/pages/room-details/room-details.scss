@@ -1,0 +1,153 @@
+@import "~scss/vars";
+@import "~scss/utils/grid";
+@import "~node-modules/sass-rem/rem";
+
+.room-details {
+
+  &__pics {
+    margin: 0 auto;
+    max-width: 1440px;
+    margin-bottom: 30px;
+  }
+
+  &__pics-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__pics-col {
+    flex: 1 1 50%;
+
+    &_main{
+      flex: 1 1 100%;
+    }
+  }
+
+  &__room-photo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    padding: 0 20px;
+    margin: 0 auto 40px;
+    flex: 0 1 800px;
+  }
+  
+  &__side-column{
+    margin: 0 auto 40px;
+    flex: 0 1 420px;
+  }
+
+  &__impressions {
+    margin-bottom: 30px;
+  }
+
+  &__about {
+    margin-bottom: 30px;
+  }
+
+  &__title{
+    margin-bottom: rem(18px);
+  }
+
+
+  &__comments {
+    margin-bottom: 30px;
+  }
+
+  &__comments-header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__comments-title{
+    padding-right: 20px;
+    margin-right: auto;
+  }
+
+  &__comment {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__rules{
+    margin-bottom: 20px;
+  }
+
+  @include media-up(md){
+    &__pics-row{
+      flex-direction: column;
+      height: 53vh;
+    }
+
+    &__pics-col {
+      overflow: hidden;
+      flex: 1 1 50%;
+      width: 32%;
+      
+      &_main {
+        width: 68%;
+        flex: 1 1 100%
+      }
+    }
+  }
+
+  @include media-up(lg){
+
+    &__pics {
+      margin-bottom: 60px;
+    }
+    
+    &__content{
+      flex: 1 1 0;
+      padding-top: 5px;
+    }
+    
+    &__info{
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+    }
+
+    &__about{
+      padding-right: 20px;
+      margin-right: auto;
+    }
+
+    &__impressions{
+      flex: 0 1 51.2%
+    }
+
+    &__impressions-inner{
+      display: flex;
+    }
+
+    &__comments{
+      padding-right: 30px;
+      margin-bottom: 33px;
+    }
+
+    &__basic-rules{
+      display: flex;
+      flex-wrap: wrap;
+      padding-right: 53px;
+    }
+
+    &__rules{
+      flex: 0 1 37%;
+      margin-right: auto;
+    }
+
+    &__rules-title{
+      padding-left: 20px;
+    }
+    
+    &__cancellation{
+      flex: 0 1 47.3%;
+
+    }
+  }
+}

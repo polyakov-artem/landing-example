@@ -1,0 +1,35 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.edged-btn {
+  padding: rem(15px 20px 15px 19px);
+  border-radius: rem(44px);
+  font-size: rem(12px);
+  line-height: 1;
+  font-weight: bold;
+  border-radius: rem(44px);
+  color: $purple-1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    background-origin: border-box;
+    border: 2px solid transparent;
+    border-radius: rem(44px);
+    box-shadow: 0 0 0 rem(100px) #fff inset;
+    background-image: $gr-purple;
+  }
+
+  &:hover,
+  &:focus,
+  &.edged-btn_hovered {
+    &:before {
+      opacity: 0.5;
+    }
+  }
+}

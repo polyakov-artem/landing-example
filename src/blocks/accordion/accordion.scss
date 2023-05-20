@@ -1,0 +1,38 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.accordion {
+  &__header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    margin-bottom: rem(17px);
+    cursor: pointer;
+    padding-right: 16px;
+  }
+
+  &__title {
+    margin-right: auto;
+    padding-right: 10px;
+  }
+
+  &__icon {
+    height: rem(15px);
+    width: rem(12px);
+    fill: $dark-opacity-50;
+
+    &_active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &_open {
+    .accordion__content {
+      display: block;
+    }
+  }
+}

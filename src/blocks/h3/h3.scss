@@ -1,0 +1,10 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.h3 {
+  color: $dark;
+  font-size: rem(12px);
+  line-height: (15/12);
+  font-weight: bold;
+  text-transform: uppercase;
+}

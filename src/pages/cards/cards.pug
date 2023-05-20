@@ -1,0 +1,351 @@
+extends ../../common/pug/page-template
+
+block title
+  title Cards
+
+block content
+  body.cards.page
+    .page__content
+      header.ui-kit-header.cards__ui-kit-header
+        svg.plain-logo
+          use(xlink:href="#plain-logo" )
+      .grid.cards__grid
+        .row
+          .column.column_lg_35p
+            .row
+              .column.column_md_6.column_lg_12.cards__item
+                .search-block.cards__search-block
+                  h4.h1.search-block__title Найдём номера под ваши пожелания
+                  .date-dropdown.plain-dropdown.search-block__date-dropdown
+                    .date-dropdown__fields
+                      .date-dropdown__field
+                        h4.h3.date-dropdown__title прибытие
+                        .input.plain-dropdown__toggle
+                          input.input__control.date-dropdown__date(data-date="arrival" placeholder = 'ДД.ММ.ГГГГ' type = 'text')
+                          svg.date-dropdown__icon
+                            use(href='#expand-more')
+                      .date-dropdown__field
+                        h4.h3.date-dropdown__title выезд
+                        .input.plain-dropdown__toggle
+                          input.input__control.date-dropdown__date(data-date="depurture" placeholder = 'ДД.ММ.ГГГГ' type = 'text')
+                          svg.date-dropdown__icon
+                            use(href='#expand-more')
+                    .date-dropdown__content
+                      .date-dropdown__calendar.calendar
+                        .calendar__datepicker
+                        .calendar__buttons
+                          button.btn.text-btn.text-btn_dark.calendar__clear-btn(type = 'button')
+                            span.btn__text очистить
+                          button.btn.text-btn.text-btn_purple.calendar__apply-btn(type = 'button')
+                            span.btn__text применить
+                  .dropdown-field.search-block__dropdown-field
+                    h4.h3.dropdown-field__title гости
+                    .items-dropdown.plain-dropdown(data-dropdown-type='guests')
+                      .input.plain-dropdown__toggle
+                        input.input__control.items-dropdown__control(type = 'text' data-placeholder = 'Сколько гостей' readOnly)
+                        svg.items-dropdown__icon
+                          use(href='#expand-more')
+                      .items-dropdown__content
+                        ul.items-dropdown__list
+                          li.items-dropdown__item
+                            span.items-dropdown__item-name Взрослые
+                            .counter.items-dropdown__counter
+                              button.btn.round-btn.counter__btn(data-operator = "minus" type='button')
+                                span.btn__text.round-btn__text -
+                              input.counter__control(type='number' min="0" value="0" name="взрослые")
+                              button.btn.round-btn.counter__btn(data-operator = "plus" type='button')
+                                span.btn__text.round-btn__text +
+                          li.items-dropdown__item
+                            span.items-dropdown__item-name Дети
+                            .counter.items-dropdown__counter
+                              button.btn.round-btn.counter__btn(data-operator = "minus" type='button')
+                                span.btn__text.round-btn__text -
+                              input.counter__control(type='number' min="0" value="0" name="дети")
+                              button.btn.round-btn.counter__btn(data-operator = "plus" type='button')
+                                span.btn__text.round-btn__text +
+                          li.items-dropdown__item
+                            span.items-dropdown__item-name Младенцы
+                            .counter.items-dropdown__counter
+                              button.btn.round-btn.counter__btn(data-operator = "minus" type='button')
+                                span.btn__text.round-btn__text -
+                              input.counter__control(type='number' min="0" value="0" name="младенцы")
+                              button.btn.round-btn.counter__btn(data-operator = "plus" type='button')
+                                span.btn__text.round-btn__text +
+                        .items-dropdown__controls
+                          button.btn.text-btn.text-btn_dark.items-dropdown__clear-btn(type = 'button')
+                            span.btn__text очистить
+                          button.btn.text-btn.text-btn_purple.items-dropdown__apply-btn(type = 'button')
+                            span.btn__text применить
+                  button.btn.btn_width_available.filled-btn.action-btn(type = 'button')
+                    span.btn__text Подобрать номер
+                    svg.action-btn__icon
+                      use(href='#arrow')
+              
+              .column.column_md_6.column_lg_12.cards__item
+                .registration-block
+                  h4.h1.registration-block__title Регистрация аккаунта
+
+                  .input.registration-block__name
+                    input.input__control(type = 'text' placeholder = 'Имя')
+
+                  .input.registration-block__surname
+                    input.input__control(type = 'text' placeholder = 'Фамилия')
+
+                  ul.radio-list.registration-block__gender
+                    li.radio-list__item
+                      label.radio
+                        input.radio__control(type = 'radio' name = 'gender' checked value='male')
+                        span.radio__box
+                        span.radio__text Мужчина
+                    li.radio-list__item
+                      label.radio
+                        input.radio__control(type = 'radio' name = 'gender' value='female')
+                        span.radio__box
+                        span.radio__text Женщина
+
+                  .text-field.registration-block__birthday-field
+                    h4.h3.text-field__title  дата рождения
+                    .input.masked-input
+                     input.input__control(type = 'text' placeholder = 'ДД.ММ.ГГГГ')
+
+                  .text-field
+                    h4.h3.text-field__title Данные для входа в сервис
+                    .input.registration-block__email
+                      input.input__control(placeholder = 'Email' type = 'email')
+
+                    .input.registration-block__password
+                      input.input__control(placeholder = 'Пароль' type = 'password')
+
+
+                  label.switch.registration-block__get-offers
+                    input.switch__control(type = 'checkbox' autocomplete = 'off' name = 'specials' value ='receive' checked)
+                    span.switch__box
+                    span.switch__text Получать спецпредложения
+
+                  button.btn.btn_width_available.filled-btn.action-btn.registration-block__pay-btn(type = 'button')
+                    span.btn__text Перейти к оплате
+                    svg.action-btn__icon
+                      use(href='#arrow')
+
+                  .registration-block__footer
+                    span.registration-block__footer-text Уже есть аккаунт на Toxin
+                    button.btn.edged-btn.registration-block__enter-btn(type = 'button')
+                      span.btn__text Войти
+
+          .column.column_lg_35p
+            .row
+              .column.column_md_6.column_lg_12.cards__item
+                .booking-block
+                  .room-info.booking-block__room-info
+                    span.room-info__number 888
+                    span.room-info__room-type люкс
+                    span.room-info__price 9 990₽
+
+                  .date-dropdown.plain-dropdown.booking-block__date-dropdown
+                    .date-dropdown__fields
+                      .date-dropdown__field
+                        h4.h3.date-dropdown__title прибытие
+                        .input.plain-dropdown__toggle
+                          input.input__control.date-dropdown__date(data-date="arrival" placeholder = 'ДД.ММ.ГГГГ' type = 'text')
+                          svg.date-dropdown__icon
+                            use(href='#expand-more')
+                      .date-dropdown__field
+                        h4.h3.date-dropdown__title выезд
+                        .input.plain-dropdown__toggle
+                          input.input__control.date-dropdown__date(data-date="depurture" placeholder = 'ДД.ММ.ГГГГ' type = 'text')
+                          svg.date-dropdown__icon
+                            use(href='#expand-more')
+                    .date-dropdown__content
+                      .date-dropdown__calendar.calendar
+                        .calendar__datepicker
+                        .calendar__buttons
+                          button.btn.text-btn.text-btn_dark.calendar__clear-btn(type = 'button')
+                            span.btn__text очистить
+                          button.btn.text-btn.text-btn_purple.calendar__apply-btn(type = 'button')
+                            span.btn__text применить
+
+                  .dropdown-field.booking-block__dropdown-field
+                    h4.h3.dropdown-field__title гости
+                    .items-dropdown.plain-dropdown(data-dropdown-type='items')
+                      .input.plain-dropdown__toggle
+                        input.input__control.items-dropdown__control(type = 'text' data-placeholder = 'Сколько гостей' readOnly)
+                        svg.items-dropdown__icon
+                          use(href = '#expand-more')
+                      .items-dropdown__content
+                        ul.items-dropdown__list
+                          li.items-dropdown__item
+                            span.items-dropdown__item-name Взрослые
+                            .counter.items-dropdown__counter
+                              button.btn.round-btn.counter__btn(data-operator = "minus" type='button')
+                                span.btn__text.round-btn__text -
+                              input.counter__control(type='number' min="0" value="3" name="взрослые")
+                              button.btn.round-btn.counter__btn(data-operator = "plus" type='button')
+                                span.btn__text.round-btn__text +
+                          li.items-dropdown__item
+                            span.items-dropdown__item-name Дети
+                            .counter.items-dropdown__counter
+                              button.btn.round-btn.counter__btn(data-operator = "minus" type='button')
+                                span.btn__text.round-btn__text -
+                              input.counter__control(type='number' min="0" value="0" name="дети")
+                              button.btn.round-btn.counter__btn(data-operator = "plus" type='button')
+                                span.btn__text.round-btn__text +
+                          li.items-dropdown__item
+                            span.items-dropdown__item-name Младенцы
+                            .counter.items-dropdown__counter
+                              button.btn.round-btn.counter__btn(data-operator = "minus" type='button')
+                                span.btn__text.round-btn__text -
+                              input.counter__control(type='number' min="0" value="0" name="младенцы")
+                              button.btn.round-btn.counter__btn(data-operator = "plus" type='button')
+                                span.btn__text.round-btn__text +
+                        .items-dropdown__controls
+                          button.btn.text-btn.text-btn_dark.items-dropdown__clear-btn(type = 'button')
+                            span.btn__text очистить
+                          button.btn.text-btn.text-btn_purple.items-dropdown__apply-btn(type = 'button')
+                            span.btn__text применить
+
+                  table.booking-block__price-table
+                    tfoot.booking-block__table-footer
+                      tr.booking-block__sum-row
+                        td.booking-block__sum-cell(colspan="2") 
+                          span.booking-block__sum-text Итого
+                        td.booking-block__sum-value 38 081₽
+                    tbody.booking-block__table-body
+                      tr.booking-block__table-row
+                        td.booking-block__name-cell(colspan="2") 9 990₽ х 4 суток
+                        td.booking-block__price-cell 39 960₽
+                      tr.booking-block__table-row
+                        td.booking-block__name-cell Сбор за услуги: скидка 2 179₽
+                        td.booking-block__info-cell
+                          span.booking-block__info-icon i
+                        td.booking-block__price-cell 0₽
+                      tr.booking-block__table-row
+                        td.booking-block__name-cell Сбор за дополнительные услуги
+                        td.booking-block__info-cell
+                          i.booking-block__info-icon i
+                        td.booking-block__price-cell 300₽
+                  button.btn.btn_width_available.filled-btn.action-btn(type = 'button')
+                    span.btn__text забронировать
+                    svg.action-btn__icon
+                      use(href='#arrow')
+
+              .column.column_md_6.column_lg_12.cards__item
+                .login-block
+                  h4.h1.login-block__title Войти
+                  .input.login-block__email
+                    input.input__control(placeholder = 'Email' type = 'email')
+
+                  .input.login-block__password
+                    input.input__control(placeholder = 'Пароль' type = 'password')
+
+                  button.btn.btn_width_available.filled-btn.action-btn.login-block__enter-btn(type = 'button')
+                    span.btn__text Войти
+                    svg.action-btn__icon
+                      use(href='#arrow')
+
+                  .login-block__footer
+                    p.login-block__footer-text Нет аккаунта на Toxin?
+                    button.btn.edged-btn.login-block__crate-btn(type = 'button')
+                      span.btn__text Создать
+          
+          .column.column_lg_30p
+            .row
+              .column.column_md_6.column_lg_12.cards__item
+                .calendar.cards__calendar
+                  .calendar__datepicker
+                  .calendar__buttons
+                    button.btn.text-btn.text-btn_dark.calendar__clear-btn(type = 'button')
+                      span.btn__text очистить
+                    button.btn.text-btn.text-btn_purple.calendar__apply-btn(type = 'button')
+                      span.btn__text применить
+
+              .column.column_md_6.column_lg_12.cards__item
+                article.room.cards__room
+                  .room__slider.tns
+                    .tns__slides
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/1.png').default  alt='Фото комнаты')
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/2.png').default  alt='Фото комнаты')
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/1.png').default  alt='Фото комнаты')
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/2.png').default  alt='Фото комнаты')
+                    .tns__controls
+                      button.btn.tns__prev-btn.tns__btn
+                        svg.tns__btn-icon
+                          use(href = '#expand-more')
+                      button.btn.tns__next-btn.tns__btn
+                        svg.tns__btn-icon
+                          use(href = '#expand-more')
+
+                  .room__wrap
+                    .room-info.room__room-info
+                      span.room-info__number.room-info__number_small 888
+                      span.room-info__room-type люкс
+                      span.room-info__price 9 990₽
+                    .room__footer
+                      .rating.room__rating
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+
+                      a.room__link(href='#')
+                        span.room__comments-number 145
+                        | Отзывов
+
+              .column.column_md_6.column_lg_12.cards__item
+                article.room.cards__room
+                  .room__slider.tns
+                    .tns__slides
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/1.png').default  alt='Фото комнаты')
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/2.png').default  alt='Фото комнаты')
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/1.png').default  alt='Фото комнаты')
+                      .tns__slide
+                        .room__img-wrap
+                          img.room__img(src=require('~images/room/2.png').default  alt='Фото комнаты')
+                    .tns__controls
+                      button.btn.tns__prev-btn.tns__btn
+                        svg.tns__btn-icon
+                          use(href = '#expand-more')
+                      button.btn.tns__next-btn.tns__btn
+                        svg.tns__btn-icon
+                          use(href = '#expand-more')
+
+                  .room__wrap
+                    .room-info.room__room-info
+                      span.room-info__number.room-info__number_small 840
+                      span.room-info__room-type люкс
+                      span.room-info__price 9 990₽
+                    .room__footer
+                      .rating.room__rating
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#star')
+                        svg.rating__item
+                          use(href='#border-star')
+
+                      a.room__link(href='#')
+                        span.room__comments-number 65
+                        | Отзывов

@@ -1,0 +1,16 @@
+<svg class='svg-gradient'>
+  <defs>
+    <linearGradient class='svg-gradient svg-gradient_purple' id='purple' x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="rgb(188, 156, 255)" />
+      <stop offset="100%" stop-color="rgb(139, 164, 249)" />
+    </linearGradient>
+    <linearGradient class='svg-gradient svg-gradient_orange' id='orange' x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FFE39C" />
+      <stop offset="100%" stop-color="#FFBA9C" />
+    </linearGradient>
+    <linearGradient class='svg-gradient svg-gradient_green' id='green' x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="rgb(111, 207, 151)" />
+      <stop offset="100%" stop-color="rgb(102, 210, 234)" />
+    </linearGradient>
+  </defs>
+</svg>

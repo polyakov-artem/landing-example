@@ -1,0 +1,39 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.login-block {
+  padding: 38px 29px 32px;
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__title {
+    margin: 0 0 rem(24px);
+  }
+
+  &__email {
+    margin-bottom: rem(11px);
+  }
+
+  &__password {
+    margin-bottom: rem(20px);
+  }
+
+  &__enter-btn {
+    margin-bottom: rem(32px);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &__footer-text {
+    margin-right: auto;
+  }
+
+  &__create-btn{
+
+  }
+}

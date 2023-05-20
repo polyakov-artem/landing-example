@@ -1,0 +1,8 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.checkbox-list {
+  &__item:not(:last-child) {
+    margin-bottom: rem(10px);
+  }
+}

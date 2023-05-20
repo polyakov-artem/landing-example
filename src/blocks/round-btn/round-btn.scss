@@ -1,0 +1,31 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.round-btn {
+  border: 1px solid $dark_opacity_25;
+  border-radius: rem(30px);
+  background: $white;
+  width: rem(30px);
+  height: rem(30px);
+
+  &__text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: rem(18px);
+    line-height: (22/18);
+    color: $dark_opacity_50;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 1px 1px $dark_opacity_25;
+  }
+
+  &:disabled,
+  &_disabled {
+    box-shadow: none;
+    opacity: 0.38;
+  }
+}

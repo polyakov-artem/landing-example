@@ -1,0 +1,25 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.links {
+
+  &__main{
+    padding: 20px;
+  }
+
+  &__title{
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    padding-left: 20px;
+    a:hover {
+      text-decoration: underline;
+    }
+    a:visited{
+      color: blueviolet
+    }
+  }
+
+}

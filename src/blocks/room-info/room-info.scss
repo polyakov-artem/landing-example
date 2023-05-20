@@ -1,0 +1,52 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.room-info {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  &__number {
+    font-weight: bold;
+    font-size: rem(24px);
+    line-height: (30/24);
+    color: $dark;
+    margin-right: rem(5px);
+
+    &_small {
+      font-size: rem(19px);
+    }
+
+    &:before {
+      content: '№';
+      display: inline;
+      font-size: rem(14px);
+      line-height: (17/14);
+      margin-right: rem(4px);
+    }
+  }
+
+  &__room-type {
+    font-weight: bold;
+    font-size: rem(12px);
+    line-height: 1.65;
+    text-transform: uppercase;
+    color: $purple-1;
+    margin-right: auto;
+    margin-top: 6px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: rem(14px);
+    margin-right: rem(4px);
+    line-height: 1.4;
+    color: $dark_opacity_50;
+
+    &:after {
+      content: ' в сутки';
+      font-weight: normal;
+      font-size: rem(12px);
+    }
+  }
+}

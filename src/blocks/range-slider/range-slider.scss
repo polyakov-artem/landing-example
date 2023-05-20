@@ -1,0 +1,31 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.range-slider {
+  &__header {
+    font-size: rem(12px);
+    line-height: (15/12);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(18px);
+    text-transform: uppercase;
+    color: $dark;
+  }
+
+  &__title {
+    font-weight: bold;
+    padding-right: 10px;
+    margin-right: auto;
+  }
+
+  &__values {
+    color: $dark_opacity_50;
+  }
+
+  &__note {
+    padding-top: rem(10px);
+    color: $dark_opacity_50;
+    font-size: rem(12px);
+    line-height: (14/12);
+  }
+}

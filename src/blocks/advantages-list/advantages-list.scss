@@ -1,0 +1,12 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.advantages-list {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+      border-bottom: 1px solid $dark_opacity_10;
+      padding-bottom: 20px;
+    }
+  }
+}

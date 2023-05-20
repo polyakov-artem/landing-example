@@ -1,0 +1,47 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.fonts-list{
+  &__item{
+    display: flex;
+    align-items: flex-start;
+    &:not(:last-child){
+      margin-bottom: (51px);
+    }
+  }
+
+  &__tag{
+    color: $dark_opacity_25;
+    padding: 0 8px;
+    margin: 0;
+    flex: 0 0 65px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  
+  &__tag-h3{
+    padding: 0 18px;
+  }
+
+  &__tag-p{
+    padding: 0;
+    text-transform: none;
+  }
+
+  &__text{
+    margin: 0;
+  }
+
+  &__type-h2{
+    @include media-up(lg){
+      max-width: 350px;  
+    }
+  }
+
+  &__type-p{
+    @include media-up(lg){
+      max-width: 310px;  
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.filled-btn {
+  padding: rem(15px 20px 15px 19px);
+  border-radius: rem(44px);
+  font-size: rem(12px);
+  line-height: 1;
+  font-weight: bold;
+  color: white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    border-radius: rem(44px);
+    background-image: $gr-purple;
+  }
+
+  &:hover,
+  &:focus,
+  &.filled-btn_hovered {
+    &:before {
+      opacity: 0.5;
+    }
+  }
+}

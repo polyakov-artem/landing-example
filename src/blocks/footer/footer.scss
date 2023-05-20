@@ -1,0 +1,135 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+@import '~scss/utils/grid';
+
+.footer {
+  background: $white;
+  box-shadow: 0px 10px 20px $dark_opacity_5;
+  max-width: 1440px;
+  margin: 0 auto;
+  
+  &__content {
+    padding: 40px 0;
+    border-bottom: 1px solid $dark_opacity_10;
+    border-top: 1px solid $dark_opacity_10;
+  }
+
+  &__logo-section{
+    text-align: center;
+  }
+
+  &__home-link {
+    display: inline-block;
+    margin-bottom: rem(17px);
+  }
+
+  &__links-section{
+    text-align: center;
+  }
+
+  &__title {
+    margin: rem(30px 0 18px);
+    font-weight: bold;
+    font-size: rem(12px);
+    line-height: (15/12);
+    text-transform: uppercase;
+    color: $dark;
+    width: 100%;
+    text-align: center;
+  }
+  
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(10px);
+    }
+  }
+
+  &__link {
+    color: $dark_opacity_50;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $dark_opacity_75;
+    }
+  }
+
+  &__subscribe-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__subscribe-text {
+    margin: rem(0 0 23px);
+  }
+
+  &__subscription-input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__copyright {
+    text-align: center;
+  }
+  
+  &__copyright-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 22px;
+  }
+
+
+
+  &__copyright-text {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  
+  @include media-up (lg) {
+
+    &__content {
+      padding: 75px 0 96px;
+    }
+
+    &__logo-section{
+      text-align: left;
+      padding-top: 24px;
+    }
+  
+    &__home-link {
+      margin-bottom: rem(10px);
+    }
+
+    &__links-section{
+      text-align: left;
+    }
+
+    &__title{
+      text-align: left;
+    }
+
+    &__item{
+      &:not(:last-child) {
+        margin-bottom: rem(14px);
+      }
+    }
+
+    &__subscribe-section{
+      text-align: left;
+    }
+
+    &__copyright-wrap{
+      display: flex;
+      align-items: center;
+    }
+
+    &__copyright-text{
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+  }
+}
+

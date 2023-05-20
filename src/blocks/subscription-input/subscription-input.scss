@@ -1,0 +1,20 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.subscription-input {
+  position: relative;
+
+  &__control {
+    padding-right: rem(44px);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: rem(18px);
+    width: rem(44px);
+    right: 0;
+    fill: url('#svg-gradient_purple');
+  }
+}

@@ -1,0 +1,75 @@
+extends ../../common/pug/page-template
+
+block title
+  title Colors & Type
+
+block content
+  body.colors
+    header.ui-kit-header
+      svg.plain-logo
+        use(xlink:href="#plain-logo" )
+    .grid.colors__grid
+      .row
+        .column.colors__column-one
+          ul.colors-list
+            li.colors-list__item
+              .color-example
+                .color-example__box.color-example__box-1
+                .color-example__description
+                    h4.color-example__title Dark Shade 100
+                      span.color-example__percent %
+                    p.color-example__code #1F2041
+            li.colors-list__item
+              .color-example.color-example_color
+                .color-example__box.color-example__box-2
+                .color-example__description
+                    h4.color-example__title Dark Shade 75
+                      span.color-example__percent %
+                    p.color-example__code #1F2041
+            li.colors-list__item
+              .color-example.color-example_color
+                .color-example__box.color-example__box-3
+                .color-example__description
+                    h4.color-example__title Dark Shade 50
+                      span.color-example__percent %
+                    p.color-example__code #1F2041
+            li.colors-list__item
+              .color-example.color-example_color
+                .color-example__box.color-example__box-4
+                .color-example__description
+                    h4.color-example__title Dark Shade 25
+                      span.color-example__percent %
+                    p.color-example__code #1F2041
+            li.colors-list__item
+              .color-example.color-example_color
+                .color-example__box.color-example__box-5
+                .color-example__description
+                    h4.color-example__title Dark Shade 5
+                      span.color-example__percent %
+                    p.color-example__code #1F2041
+            li.colors-list__item
+              .color-example.color-example_color
+                .color-example__box.color-example__box-6
+                .color-example__description
+                    h4.color-example__title Purple
+                    p.color-example__code #BC9CFF
+            li.colors-list__item
+              .color-example.color-example_color
+                .color-example__box.color-example__box-7
+                .color-example__description
+                    h4.color-example__title Green
+                    p.color-example__code #6FCF97
+        .column.colors__column-two
+          ul.fonts-list
+            li.fonts-list__item
+              h1.h1.fonts-list__tag h1
+              p.h1.fonts-list__text This one is the sub-section or widget title
+            li.fonts-list__item
+              h2.h2.fonts-list__tag h2
+              p.h2.fonts-list__text.fonts-list__type-h2 Next one is the item title inside widgets
+            li.fonts-list__item
+              h3.h3.fonts-list__tag.fonts-list__tag-h3 h3
+              p.h3.fonts-list__text This is a label or CTA text
+            li.fonts-list__item
+              p.fonts-list__tag.fonts-list__tag-p Body
+              p.fonts-list__text.fonts-list__type-p This is the body text which is used for most of the design, like paragraphs, lists, etc.

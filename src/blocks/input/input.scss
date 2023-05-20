@@ -1,0 +1,52 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.input {
+  position: relative;
+  height: rem(44px);
+
+  &__control {
+    display: block;
+    line-height: 1;
+    width: 100%;
+    font-size: rem(14px);
+    letter-spacing: -0.013em;
+    height: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 0 15px;
+    background: $white;
+    color: $dark_opacity_75;
+    border-color: $dark_opacity_25;
+
+
+    &:disabled {
+      cursor: default;
+    }
+
+    &:hover,
+    &:focus,
+    &.input__control_hovered,
+    &.input__control_focused {
+      border-color: $dark_opacity_50;
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $dark_opacity_25;
+    }
+
+    &::-moz-input-placeholder {
+      color: $dark_opacity_25;
+    }
+
+    &:-moz-placeholder {
+      color: $dark_opacity_25;
+    }
+
+    &:-ms-input-placeholder {
+      color: $dark_opacity_25;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.like-btn {
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-origin: border-box;
+  user-select: none;
+  height: rem(20px);
+  min-width: rem(40px);
+  border: 1px solid transparent;
+  border-radius: rem(20px);
+  padding: rem(0 4px);
+  background-color: $dark_opacity_25;
+  box-shadow: 0 0 0 100px #fff inset;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__control {
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__icon {
+    display: block;
+    margin-right: rem(6px);
+    width: rem(8px);
+    height: rem(10px);
+    background-image: url('~assets/svg/favorite-purple-borders.svg?inline');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__text {
+    line-height: 1;
+    font-size: rem(10px);
+    color: $dark_opacity_25;
+    user-select: none;
+  }
+
+  &_focused {
+    box-shadow: 0 0 0 100px #fff inset, 0 0 0 100px #fff inset, 0 0 1px 1px $dark_opacity_25;
+  }
+
+  &_checked {
+    background-image: $gr-purple;
+
+    .like-btn__icon {
+      background-image: url('~assets/svg/favorite-purple.svg?inline');
+    }
+
+    &.like-btn_focused {
+      box-shadow: 0 0 0 100px #fff inset, 0 0 0 100px #fff inset, 0 0 1px 1px $purple-1;
+    }
+  }
+}

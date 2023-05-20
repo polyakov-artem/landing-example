@@ -1,0 +1,21 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.registration {
+  background: $white;
+
+  &__intro{
+    max-width: 1440px;
+    margin: 0 auto;
+    background: url('~images/registration/1.jpg') center no-repeat;
+    background-size: cover;
+    padding:  18px 20px;
+  }
+
+  &__registration-block{
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+}

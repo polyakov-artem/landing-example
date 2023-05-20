@@ -1,0 +1,16 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+
+.condition {
+  &__state{
+    float: right;
+    margin-left: 10px;  
+    color: $dark;
+    font-size: rem(12px);
+    line-height: (15/12);
+    text-transform: uppercase;
+    top: rem(-3px);
+    position: relative;
+  }
+}

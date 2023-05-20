@@ -1,0 +1,23 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.headers-and-footers {
+  background: $gray;
+
+  &__ui-kit-header {
+    padding-bottom: 64px;
+  }
+
+  &__header-one {
+    margin-bottom: 40px;
+  }
+
+  &__header-two {
+    margin-bottom: 38px;
+  }
+
+  &__footer {
+    margin-bottom: 38px;
+  }
+}

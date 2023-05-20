@@ -1,0 +1,22 @@
+block functions
+  -
+    function getMixedAttr(elemName,  mods, mix, attr, attributes){
+
+      const mixedAttr = Object.assign({}, attributes, attr);
+      mixedAttr.class = getClasess(elemName, mods, mix)
+        .concat(attributes.class? attributes.class.split(' '): []);
+
+      return mixedAttr;
+    }
+
+    function getClasess(elemName, mods={}, mix=[]){
+      const modsArr = Object.keys(mods)
+        .map((modName)=>
+           (typeof mods[modName] === "boolean"
+           ? `${elemName}_${modName}`
+           :`${elemName}_${modName}_${mods[modName]}`
+          ));
+      return [ elemName, ...modsArr, ...mix];
+    };
+
+block template

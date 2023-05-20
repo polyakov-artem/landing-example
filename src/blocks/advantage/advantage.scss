@@ -1,0 +1,18 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.advantage {
+  display: flex;
+
+  &__icon {
+    flex: 0 0 auto;
+    width: rem(40px);
+    height: rem(40px);
+    margin: 4px 14px 0px 4px;
+    fill: url(#svg-gradient_purple);
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,61 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.registration-block {
+  padding: 41px 29px 29px;
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__title {
+    margin: 0 0 rem(20px);
+  }
+
+  &__name {
+    margin-bottom: rem(9px);
+  }
+
+  &__surname {
+    margin-bottom: rem(8px);
+  }
+
+  &__gender {
+    margin-bottom: rem(23px);
+  }
+
+  &__birthday-field {
+    margin-bottom: rem(21px);
+  }
+
+  &__email {
+    margin-bottom: rem(11px);
+  }
+
+  &__password {
+    margin-bottom: rem(11px);
+  }
+
+  &__get-offers {
+    margin-bottom: rem(23px);
+  }
+
+  &__pay-btn {
+    margin-bottom: rem(30px);
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__footer-text {
+    margin-right: auto;
+  }
+
+  &__enter-btn {
+    padding: rem(15px 26px 15px 26px);
+    margin-top: rem(2px);
+  }
+}

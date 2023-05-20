@@ -1,0 +1,16 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.rating {
+  display: inline-flex;
+
+  &__item {
+    height: rem(18px);
+    width: rem(18px);
+    flex: 0 0 auto;
+    fill: url(#svg-gradient_purple);
+    &:not(:last-child){
+      margin-right: rem(6px);
+    }
+  }
+}

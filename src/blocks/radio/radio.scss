@@ -1,0 +1,93 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.radio {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  display: flex;
+
+  &__control {
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    opacity: 0;
+
+    &:focus {
+      ~.radio__box {
+        box-shadow: 0 0 1px 1px $purple-1;
+      }
+    }
+
+
+    &:checked {
+      ~.radio__box {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      ~.radio__text {
+        color: $dark_opacity_75;
+      }
+    }
+
+
+    &:disabled {
+      ~.radio__box {
+        cursor: default;
+        background: $dark_opacity_5;
+        box-shadow: none;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      ~.radio__text {
+        cursor: default;
+        color: $dark_opacity_5;
+      }
+    }
+  }
+
+  &__box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    top: rem(3px);
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: 9.5px;
+    flex: 0 0 rem(20px);
+    border: 1px solid #000;
+    border-radius: 50%;
+    background: $white;
+    border-color: $purple-1;
+
+    &:after {
+      content: '';
+      display: block;
+      width: rem(10px);
+      height: rem(10px);
+      border-radius: 50%;
+      background: $gr-purple;
+      opacity: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 1px 1px $purple-1;
+    }
+  }
+
+  &__text {
+    font-size: rem(14px);
+    line-height: (24/14);
+    color: $dark_opacity_50;
+    cursor: pointer;
+  }
+
+}

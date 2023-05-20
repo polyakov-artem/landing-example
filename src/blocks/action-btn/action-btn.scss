@@ -1,0 +1,19 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.action-btn {
+  padding-right: 44px;
+  padding-left: 44px;
+  position: relative;
+
+  &__icon{
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  height: rem(18px);
+  width: rem(44px);
+  right: 0;
+  fill: #fff;
+ }
+ 
+}

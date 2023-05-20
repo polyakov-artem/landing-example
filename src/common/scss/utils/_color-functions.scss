@@ -1,0 +1,14 @@
+@function makeTransparentGradient($startColor, $endColor, $opacity, $startOpacity, $endOpacity, $deg: 180deg) {
+  @if $opacity {
+     $startOpacity = $endOpacity = $opacity
+  }
+  @return linear-gradient($deg, rgba($startColor, $startOpacity) 0%, rgba($endColor, $endOpacity) 100%);
+}
+
+
+@function makeDarkenedGradient($startColor, $endColor, $shading, $startShading, $endShading, $deg: 180deg) {
+  @if $shading {
+     $startShading = $endShading = $shading
+  }
+  @return linear-gradient($deg, darken($startColor, $startShading) 0%, darken($endColor, $endShading) 100%);
+}

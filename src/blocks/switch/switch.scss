@@ -1,0 +1,94 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.switch {
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  display: flex;
+
+  &__control {
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    opacity: 0;
+
+    &:focus {
+      ~.switch__box {
+        box-shadow: 0 0 0 1px $dark_opacity_25;
+      }
+    }
+
+    &:checked {
+
+      ~.switch__box {
+        border-color: $purple-1;
+
+        &:after {
+          transform: translate(rem(23px), -50%);
+          background: $gr-purple;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        ~.switch__box {
+          box-shadow: 0 0 0 1px $purple-1;
+        }
+      }
+    }
+
+    &:disabled {
+      ~.switch__box {
+        cursor: default;
+        background: $dark_opacity_5;
+        box-shadow: none;
+      }
+
+      ~.switch__text {
+        cursor: default;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #000;
+    width: rem(40px);
+    height: rem(20px);
+    border-radius: rem(20px);
+    margin-right: 9px;
+    flex: 0 0 rem(40px);
+    border-color: $dark_opacity_25;
+    background: #fff;
+    transition: 0.05s ease-in border-color;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: rem(12px);
+      height: rem(12px);
+      border-radius: 50%;
+      transform: translate(rem(3px), -50%);
+      background: $dark_opacity_25;
+      transition: 0.05s ease-in transform, 0.05s ease-in background;
+    }
+
+    &:hover {
+      box-shadow: 0 0 1px 1px $dark_opacity_25;
+    }
+  }
+
+  &__text {
+    cursor: pointer;
+    font-size: rem(14px);
+    line-height: (18/14);
+    color: $dark_opacity_75;
+  }
+
+}

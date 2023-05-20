@@ -1,0 +1,10 @@
+import "~blocks/masked-input/masked-input";
+import "~blocks/like-btn/like-btn";
+import "~blocks/range-slider/range-slider";
+import "~blocks/items-dropdown/items-dropdown";
+import "~blocks/calendar/calendar";
+import "~blocks/date-dropdown/date-dropdown";
+import "~blocks/accordion/accordion";
+import "~blocks/room/room";
+import "~blocks/header/header";
+import "~blocks/search-panel/search-panel";

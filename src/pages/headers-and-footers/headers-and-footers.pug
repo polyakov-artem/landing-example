@@ -1,0 +1,210 @@
+extends ../../common/pug/page-template
+
+block title
+  title Headers & Footers
+
+block content
+  body.headers-and-footers
+
+    header.ui-kit-header.headers-and-footers__ui-kit-header
+      svg.plain-logo
+        use(xlink:href="#plain-logo")
+
+    header.header.headers-and-footers__header-one
+
+      nav.header__navbar
+        a.header__home-link(href='/')
+          svg.logo
+            use(xlink:href="#logo")
+
+        .header__menu-content
+          ul.header__menu
+            li.header__item.header__item_active
+              a.header__link(href='/about' title='О нас') О нас
+            li.header__item.header__submenu
+              a.header__link(href='/serivices' title='Услуги') Услуги
+                svg.header__submenu-icon
+                  use(href = '#expand-more')
+              .header__submenu-content
+                .header__submenu-wrap
+                  ul.header__submenu-list
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Service 1') Service 1
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Service 2') Service 2
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Service 3') Service 3
+            li.header__item
+              a.header__link(href='#' title='Вакансии') Вакансии
+            li.header__item
+              a.header__link(href='#' title='Новости') Новости
+            li.header__item.header__submenu
+              a.header__link(href='#' title='Соглашения') Соглашения
+                svg.header__submenu-icon
+                  use(href = '#expand-more')
+              .header__submenu-content
+                .header__submenu-wrap
+                  ul.header__submenu-list
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Соглашение 1') Соглашение 1
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Соглашение 2') Соглашение 2
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Соглашение 3') Соглашение 3
+          .header__menu-buttons
+            button.btn.edged-btn.header__btn(type = 'button')
+              span.btn__text Войти
+            button.btn.filled-btn.header__btn(type = 'button')
+              span.btn__text Зарегестрироваться
+
+        .header__buttons
+          button.btn.edged-btn.header__btn.header__login-btn(type = 'button')
+            span.btn__text Войти
+          button.btn.filled-btn.header__btn.header__register-btn(type = 'button')
+            span.btn__text Зарегестрироваться
+
+        a.header__user(href='#profile')
+          span.header__user-name Юлий Цезарь
+
+        button.btn.hamburger.hamburger_type_slider.header__toggler
+          span.hamburger__box
+            span.hamburger__inner
+
+    header.header.header_logged-in.headers-and-footers__header-two
+
+      nav.header__navbar
+        a.header__home-link(href='/')
+          svg.logo
+            use(xlink:href="#logo")
+
+        .header__menu-content
+          ul.header__menu
+            li.header__item.header__item_active
+              a.header__link(href='/about' title='О нас') О нас
+            li.header__item.header__submenu
+              a.header__link(href='/serivices' title='Услуги') Услуги
+                svg.header__submenu-icon
+                  use(href = '#expand-more')
+              .header__submenu-content
+                .header__submenu-wrap
+                  ul.header__submenu-list
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Service 1') Service 1
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Service 2') Service 2
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Service 3') Service 3
+            li.header__item
+              a.header__link(href='#' title='Вакансии') Вакансии
+            li.header__item
+              a.header__link(href='#' title='Новости') Новости
+            li.header__item.header__submenu
+              a.header__link(href='#' title='Соглашения') Соглашения
+                svg.header__submenu-icon
+                  use(href = '#expand-more')
+              .header__submenu-content
+                .header__submenu-wrap
+                  ul.header__submenu-list
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Соглашение 1') Соглашение 1
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Соглашение 2') Соглашение 2
+                    li.header__submenu-item
+                      a.header__link.header__submenu-link(href='#' title='Соглашение 3') Соглашение 3
+          .header__menu-buttons
+            button.btn.edged-btn.header__btn(type = 'button')
+              span.btn__text Войти
+            button.btn.filled-btn.header__btn(type = 'button')
+              span.btn__text Зарегестрироваться
+
+        .header__buttons
+          button.btn.edged-btn.header__btn.header__login-btn(type = 'button')
+            span.btn__text Войти
+          button.btn.filled-btn.header__btn.header__register-btn(type = 'button')
+            span.btn__text Зарегестрироваться
+
+        a.header__user(href='#profile')
+          span.header__user-name Юлий Цезарь
+
+        button.btn.hamburger.hamburger_type_slider.header__toggler
+          span.hamburger__box
+            span.hamburger__inner
+  
+    footer.footer.headers-and-footers__footer
+      .footer__content
+        .grid
+          .row 
+            .column.column_lg_3.footer__logo-section
+              a.footer__home-link(href='/')
+                svg.logo
+                  use(xlink:href="#logo")
+              p.footer__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+            .column.column_lg_6.footer__links-section
+              .row
+                .column.column_6.column_sm_4
+                  h4.footer__title Навигация
+                  ul.footer__list
+                    li.footer__item
+                      a.footer__link(href='#') О нас
+                    li.footer__item
+                      a.footer__link(href='#') Новости
+                    li.footer__item
+                      a.footer__link(href='#') Служба поддержки
+                    li.footer__item
+                      a.footer__link(href='#') Услуги
+                .column.column_6.column_sm_4
+                  h4.footer__title О нас
+                  ul.footer__list
+                    li.footer__item
+                      a.footer__link(href='#') О сервисе
+                    li.footer__item
+                      a.footer__link(href='#') Наша команда
+                    li.footer__item
+                      a.footer__link(href='#') Вакансии
+                    li.footer__item
+                      a.footer__link(href='#') Инвесторы
+                .column.column_6.column_sm_4
+                  h4.footer__title Служба поддержки
+                  ul.footer__list
+                    li.footer__item
+                      a.footer__link(href='#') Соглашение
+                    li.footer__item
+                      a.footer__link(href='#') Сообщества
+                    li.footer__item
+                      a.footer__link(href='#') Связь с нами
+            .column.column_lg_3.footer__subscribe-section
+              h4.footer__title Подписка
+              p.footer__subscribe-text Получайте специальные предложения и новости сервиса
+              .input.subscription-input.footer__subscription-input
+                input.input__control.subscription-input__control(type = 'email' placeholder = 'Email')
+                svg.subscription-input__icon
+                  use(href='#arrow')
+      .footer__copyright
+        .footer__copyright-wrap
+          p.footer__copyright-text Copyright © 2018 Toxin отель. Все права защищены.
+          .social-links.footer__social-links
+            a.social-links__item(href='#')
+              svg.social-links__icon
+                use(xlink:href="#twitter")
+            a.social-links__item(href='#')
+              svg.social-links__icon
+                use(xlink:href="#facebook")
+            a.social-links__item(href='#')
+              svg.social-links__icon
+                use(xlink:href="#instagram")
+
+    footer.plain-footer
+      a.plain-footer__home-link(href='/')
+        svg.logo
+          use(xlink:href="#logo")
+      p.plain-footer__copyright-text Copyright © 2018 Toxin отель. Все права защищены.
+      .social-links
+        a.social-links__item(href='#')
+          svg.social-links__icon
+            use(xlink:href="#twitter")
+        a.social-links__item(href='#')
+          svg.social-links__icon
+            use(xlink:href="#facebook")
+        a.social-links__item(href='#')
+          svg.social-links__icon
+            use(xlink:href="#instagram")

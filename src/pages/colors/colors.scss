@@ -1,0 +1,27 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+
+.colors {
+  &__grid{
+    max-width: 1180px;
+  }
+
+  &__column-one{
+    margin-bottom: rem(32px);
+    @include media-up($md){
+      flex: 1 0 300px;
+    }
+  }
+
+  &__colors-list {
+    min-width: 300px;
+  }
+
+  &__column-two{
+    @include media-up($md){
+      flex: 0 0 482px;
+    }
+  }
+}

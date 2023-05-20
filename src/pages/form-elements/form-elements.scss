@@ -1,0 +1,212 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.form-elements {
+  &__column {
+    padding-bottom: 20px;
+  }
+
+  &__column-one {
+    @include media-up($sm) {
+      flex: 0 0 50%;
+    }
+
+    @include media-up($lg) {
+      flex: 0 0 percentage(1/3);
+      padding-right: 59px;
+    }
+  }
+
+  &__column-two {
+    @include media-up($sm) {
+      flex: 0 0 50%;
+    }
+
+    @include media-up($lg) {
+      flex: 0 0 percentage(1/3);
+      padding-left: 68px;
+    }
+  }
+
+  &__column-three {
+    @include media-up($sm) {
+      flex: 0 0 50%;
+    }
+
+    @include media-up($lg) {
+      flex: 0 0 percentage(1/3);
+      padding-left: 59px;
+    }
+  }
+
+  &__column-four {
+    @include media-up($sm) {
+      flex: 0 0 50%;
+    }
+
+    @include media-up($lg) {
+      flex: 0 0 percentage(1/3);
+      padding: 0 12px 0 68px;
+    }
+  }
+
+  &__column-five {
+    @include media-up($sm) {
+      flex: 0 0 50%;
+    }
+
+    @include media-up($lg) {
+      flex: 1 1 0;
+      padding-left: 68px;
+    }
+  }
+
+  &__text-field {
+    margin-bottom: rem(20px);
+  }
+
+  &__dropdown-field {
+    margin-bottom: rem(22px);
+  }
+
+  &__masked-field {
+    margin-bottom: rem(40px);
+  }
+
+  &__date-dropdown {
+    margin-bottom: rem(40px);
+  }
+
+  &__wrap {
+    @include media-up($lg) {
+      max-width: 267px;
+    }
+  }
+
+  &__filter-date-dropdown {
+    margin-bottom: rem(41px);
+  }
+
+  &__subscription {
+    @include media-up($lg) {
+      margin-bottom: rem(80px)
+    }
+  }
+
+  &__checkbox-buttons {
+    margin-bottom: rem(42px);
+    max-width: 220px;
+  }
+
+  &__radio-buttons {
+    margin-bottom: rem(38px);
+  }
+
+  &__radio-title{
+    margin-bottom: 1.1em;
+  }
+
+  &__switch-buttons {
+    margin-bottom: rem(45px);
+  }
+
+  &__switch-title{
+    margin-bottom: 1.4em;
+  }
+
+  &__switch {
+    margin-bottom: rem(14px);
+  }
+
+  &__like-buttons {
+    margin-bottom: rem(38px);
+  }
+
+  &__like-title {
+    margin-bottom: 1.1em;
+  }
+
+  &__like-btn {
+    margin-right: 10px;
+  }
+
+  &__rating {
+    margin-right: 26px;
+    margin-left: 2px;
+  }
+
+  &__ratings-title {
+    margin-bottom: 1.7em;
+  }
+
+  &__range-slider {
+    max-width: 266px;
+    margin-bottom: rem(40px);
+  }
+
+  &__buttons {
+    padding-bottom: rem(41px);
+  }
+
+  &__buttons-title{
+    margin-bottom: 0.42em;
+  }
+
+  &__small-buttons {
+    padding-top: rem(10px);
+    max-width: 266px;
+    padding-bottom: rem(27px);
+  }
+
+  &__btn {
+    margin-right: 20px;
+    margin-bottom: rem(33px);
+  }
+
+  &__edged-btn {
+    margin-right: 20px;
+    margin-bottom: rem(27px);
+  }
+
+  &__text-btn {
+    margin-right: 20px;
+  }
+
+  &__pagination-title{
+    margin-bottom: 1.4em;
+  }
+
+  &__dropdown-one {
+    margin-bottom: rem(20px);
+  }
+
+  &__dropdown-two {
+    margin-bottom: rem(153px);
+  }
+
+  &__accordion-one {
+    margin-bottom: rem(49px);
+  }
+
+  &__accordion-two {
+    margin-bottom: rem(20px);
+  }
+
+  &__rich-checkboxes {
+    max-width: 260px;
+  }
+
+  &__bullet-list {
+    max-width: 260px;
+  }
+
+  &__advantages {
+    max-width: 280px;
+    padding-top: rem(60px);
+  }
+
+  &__comment {
+    padding-top: rem(70px);
+  }
+}

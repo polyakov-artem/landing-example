@@ -1,0 +1,29 @@
+@import '~scss/vars';
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-left: -20px;
+  
+  &_no-gutters{
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &_direction_column{
+    flex-direction: column;
+  }
+  &_align_center {
+    align-items: center;
+  }
+
+  &_justify_center {
+    justify-content: center;
+  }
+
+  &_justify_space-between{
+    justify-content: space-between;
+  }
+
+}

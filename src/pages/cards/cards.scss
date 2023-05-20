@@ -1,0 +1,33 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.cards {
+  background: $gray;
+
+  &__grid {
+    @include media-up(sm) {
+      max-width: 576px;
+    }
+
+    @include media-up(md) {
+      max-width: 1200px;
+    }
+  }
+
+  &__ui-kit-header {
+    margin-bottom: 5px;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+  }
+
+  &__calendar {
+    max-width: 320px;
+  }
+
+  &__room {
+    max-width: 271px;
+  }
+}

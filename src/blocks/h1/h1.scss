@@ -1,0 +1,9 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.h1 {
+  color: $dark;
+  font-size: rem(24px);
+  line-height: (29/24);
+  font-weight: bold;
+}

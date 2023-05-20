@@ -1,0 +1,46 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+
+
+.column {
+  @include make-col-ready();
+
+  &_auto {
+    @include make-media-col($sizes: (xs: auto));
+  }
+
+  &_grow {
+    @include make-media-col($sizes: (xs: grow));
+  }
+
+  @for $i from 1 through $columns {
+    &_#{$i} {
+      @include make-media-col($sizes: (xs: $i/$columns))
+    }
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    &_#{$breakpoint}_auto {
+      @include make-media-col($sizes: (#{$breakpoint}: auto))
+    }
+
+    &_#{$breakpoint}_grow {
+      @include make-media-col($sizes: (#{$breakpoint}: grow))
+    }
+
+    @for $i from 1 through $columns {
+      &_#{$breakpoint}_#{$i} {
+        @include make-media-col($sizes: (#{$breakpoint}: $i/$columns))
+      }
+    }
+  }
+
+  &_lg_30p {
+    @include make-media-col($sizes: (lg: 360/1200));
+  }
+
+  &_lg_35p {
+    @include make-media-col($sizes: (lg: 420/1200));
+  }
+
+}

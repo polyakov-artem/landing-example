@@ -1,0 +1,50 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.irs {
+  &_size_m {
+    &.irs--round {
+      height: 16px;
+    }
+
+    &.irs--round .irs-line {
+      top: 5px;
+      height: 6px;
+      border: 1px solid $dark_opacity_25;
+      border-radius: 3px;
+    }
+
+    &.irs--round .irs-handle {
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $white;
+      box-shadow: none;
+      border-radius: 50%;
+    }
+
+    &.irs--round .irs-bar {
+      top: 5px;
+      height: 6px;
+    }
+  }
+
+  &_theme_green {
+    &.irs--round .irs-line {
+      background-color: $white;
+      border-color: $dark_opacity_25;
+    }
+
+    &.irs--round .irs-handle {
+      border-color: $white;
+      background-color: $green-1;
+      background-image: $gr-green;
+      cursor: pointer;
+    }
+
+    &.irs--round .irs-bar {
+      background-color: $green-1;
+      background-image: $gr-green;
+    }
+  }
+}

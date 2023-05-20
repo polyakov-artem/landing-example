@@ -1,0 +1,19 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.btn {
+  position: relative;
+  text-align: center;
+
+  &__text {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    line-height: inherit;
+  }
+
+  &_width_available {
+    width: 100%;
+  }
+}

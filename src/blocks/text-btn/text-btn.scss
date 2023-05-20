@@ -1,0 +1,28 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.text-btn {
+  font-size: rem(12px);
+  line-height: 1;
+  font-weight: bold;
+
+  &_purple {
+    color: $purple-1;
+
+    &.btn_hovered,
+    &:hover,
+    &:focus {
+      color: lighten($purple-1, 10%)
+    }
+  }
+
+  &_dark {
+    color: $dark_opacity_50;
+
+    &.btn_hovered,
+    &:hover,
+    &:focus {
+      color: lighten($dark_opacity_50, 50%)
+    }
+  }
+}

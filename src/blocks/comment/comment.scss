@@ -1,0 +1,35 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.comment {
+  &__header {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__avatar {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #fff;
+    box-shadow: 0px 10px 20px $dark_opacity_10;
+    border-radius: 48px;
+  }
+
+  &__meta {
+    padding-left: 10px;
+  }
+
+  &__author-name {
+    font-weight: bold;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__like-btn {
+    margin: 2px 14px 0 4px;
+    flex: 0 0 auto;
+  }
+}

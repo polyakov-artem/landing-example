@@ -1,0 +1,97 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.booking-block {
+  padding: 41px 29px 29px 30px;
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__room-info {
+    margin-bottom: rem(20px);
+  }
+
+  &__date-dropdown {
+    margin-bottom: rem(21px);
+  }
+
+  &__dropdown-field {
+    margin-bottom: rem(18px);
+  }
+
+  &__price-table {
+    margin-bottom: rem(20px);
+    width: 100%;
+  }
+
+  &__sum-row {
+    font-weight: bold;
+    font-size: rem(19px);
+    line-height: (24/19);
+    color: $dark;
+  }
+
+  &__sum-cell {
+    position: relative;
+    padding-top: 14px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px dashed $dark_opacity_25;
+      z-index: 1;
+    }
+  }
+
+  &__sum-text {
+    background: white;
+    display: inline-block;
+    z-index: 2;
+    position: relative;
+  }
+
+  &__sum-value {
+    padding-top: 14px;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  &__table-row {
+    color: $dark_opacity_75;
+  }
+
+  &__name-cell {
+    padding-bottom: rem(15px);
+    position: relative;
+    line-height: 1.4;
+  }
+
+  &__info-cell {
+    vertical-align: top;
+  }
+
+  &__info-icon {
+    height: rem(20px);
+    width: rem(20px);
+    display: block;
+    border: 1px solid $dark_opacity_25;
+    border-radius: rem(20px);
+    text-align: center;
+    line-height: rem(20px);
+    font-size: rem(12px);
+    font-weight: bold;
+    color: $dark_opacity_25;
+  }
+
+  &__price-cell {
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+
+}

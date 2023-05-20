@@ -1,0 +1,60 @@
+@import '~scss/vars';
+@import '~scss/utils/grid';
+@import '~node-modules/sass-rem/rem';
+
+.search-room {
+
+  &__main{
+    padding-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__result-item{
+    margin-bottom: 18px;
+  }
+
+  &__results-title {
+    margin-bottom: 21px;
+  }
+
+  &__pagination{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+  }
+
+  @include media-up(md){
+    &__filters-column{
+      flex: 0 0 305px;
+    }
+
+    &__results-column{
+      flex: 1 1 0;
+      padding-left: 42px;
+    }
+
+    &__results-inner {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -6px 20px;
+    }
+
+    &__result-item{
+      flex: 0 0 100%;
+      padding: 0 6px;
+    }
+  }
+
+  @include media-up(lg){
+    &__result-item{
+      flex: 0 0 50%;
+    }
+  }
+
+  @include media-up(xl){
+    &__result-item{
+      flex: 0 0 33.33%;
+    }
+  }
+}

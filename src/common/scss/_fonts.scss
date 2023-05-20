@@ -1,0 +1,8 @@
+@import '~scss/utils/font-mixins';
+
+@include font-face("Quicksand", "assets/fonts/Quicksand/Quicksand-Regular", $formats:(ttf));
+@include font-face("Quicksand", "assets/fonts/Quicksand/Quicksand-Bold", bold, $formats:(ttf));
+@include font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Bold", bold);
+@include font-face("Montserrat", "assets/fonts/Montserrat/Montserrat-Regular");
+@include font-face("Material Icons", "assets/fonts/MaterialIcons/MaterialIcons-Regular");
+@include font-face("OpenSans", "assets/fonts/OpenSans/open-sans-bold", bold);

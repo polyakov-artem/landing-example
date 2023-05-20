@@ -1,0 +1,98 @@
+@import '~scss/vars';
+
+.diagram {
+  display: flex;
+
+  &__circle-wrap{
+    position: relative;
+    flex: 0 0 auto
+  }
+
+  &__circle{
+    width: 120px;
+    height: 120px;
+  }
+
+  &__text{
+    z-index: 2;
+    color: $purple-1;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: 1;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &__value{
+    font-size: 24px;
+    display: block;
+  }
+  
+  &__units{
+    font-size: 15px;
+  }
+
+  &__segment-one {
+    stroke: url(#svg-gradient_green)
+  }
+
+  &__segment-two {
+    stroke: url(#svg-gradient_orange)
+  }
+
+  &__segment-three {
+    stroke: url(#svg-gradient_purple)
+  }
+
+  &__legend{
+    padding-top: 30px;
+    padding-left: 25px;
+  }
+
+  &__legend-item {
+    padding-left: 20px;
+    position: relative;
+    flex: 0 0 auto;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 5px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+
+    &:nth-child(1) {
+      &:before {
+        background: linear-gradient(180deg, $orange-1 0%, $orange-2 100%);
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        background: linear-gradient(180deg, $green-1 0%, $green-2 100%);
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        background: linear-gradient(180deg, $purple-1 0%, $purple-2 100%);
+      }
+    }
+
+    &:nth-child(4) {
+      &:before {
+        background: linear-gradient(180deg, $black-1 0%, $black-2 100%);
+      }
+    }
+  }
+
+}

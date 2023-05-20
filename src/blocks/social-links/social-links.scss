@@ -1,0 +1,17 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.social-links{
+  display: inline-flex;
+  &__item{
+    flex: 0 0 auto;
+    &:not(:last-child){
+      margin-right: 23px;
+    }
+  }
+  &__icon{
+    width: rem(22px);
+    height: rem(22px);
+    fill: url(#svg-gradient_purple);
+  }
+}

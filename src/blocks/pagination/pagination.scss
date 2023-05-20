@@ -1,0 +1,64 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.pagination {
+  &__list {
+    display: flex;
+    margin-bottom: rem(8px);
+  }
+
+  &__item {
+    flex: 0 0 auto;
+  }
+
+  &__link {
+    width: rem(40px);
+    height: rem(40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: rem(12px);
+    color: $dark_opacity_50;
+    border-radius: 50%;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: $gr-purple;
+      color: #fff;
+    }
+
+    &_active {
+      font-weight: bold;
+      background: $gr-purple;
+      color: #fff;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    &_view_control {
+      background: $gr-green;
+
+      &:hover {
+        background: $gr-green_darker_5;
+      }
+    }
+  }
+
+  &__icon {
+    width: rem(18px);
+    height: rem(18px);
+    fill: $white;
+  }
+
+  &__caption {
+    padding-left: 5px;
+    font-size: rem(14px);
+    line-height: (24/14);
+    color: $dark_opacity_75;
+  }
+}

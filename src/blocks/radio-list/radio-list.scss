@@ -1,0 +1,11 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+
+.radio-list {
+  display: flex;
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+}

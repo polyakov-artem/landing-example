@@ -1,0 +1,93 @@
+@import '~scss/vars';
+@import '~node-modules/sass-rem/rem';
+@import '~scss/utils/grid';
+
+.date-dropdown {
+  position: relative;
+
+  &__date {
+    padding-right: rem(44px);
+
+    &::-webkit-input-placeholder {
+      color: $dark_opacity_75;
+    }
+
+    &::-moz-input-placeholder {
+      color: $dark_opacity_75;
+    }
+
+    &:-moz-placeholder {
+      color: $dark_opacity_75;
+    }
+
+    &:-ms-input-placeholder {
+      color: $dark_opacity_75;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: rem(16px);
+    height: rem(9px);
+    width: rem(44px);
+    right: 0;
+    fill: $dark-opacity-50;
+  }
+
+  &__title {
+    margin: 0 0 rem(6px);
+  }
+
+  &__fields {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__field {
+    flex: 1 1 0;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    padding-top: 6px;
+    top: 100%;
+    left: 0;
+    width: 260px;
+    border-top: none;
+    z-index: 10;
+
+    @include media-up(400px) {
+      width: 320px;
+    }
+  }
+
+  &__calendar {
+    border: 1px solid $dark_opacity_25;
+  }
+
+  &__buttons {
+    display: flex;
+    padding: rem(22px 0 17px);
+  }
+
+  &__clear-btn {
+    flex: none;
+    margin-right: auto;
+  }
+
+  &__apply-btn {
+    flex: none;
+  }
+
+  &.plain-dropdown_is_open {
+    .date-dropdown__content {
+      display: block;
+      z-index: 100;
+    }
+  }
+}
