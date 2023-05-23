@@ -11,6 +11,7 @@ class LikeBtn {
     this.$control = $element.find(SELECTOR_CONTROL);
     this.$counter = $element.find(SELECTOR_COUNTER);
     this.isChecked = $element.hasClass(CLASS_CHECKED);
+    this.value = +this.$counter.text();
 
     this.bindEvents()
   }
@@ -22,12 +23,11 @@ class LikeBtn {
   }
 
   changeHandler() {
-    const counterValue = +this.$counter.text();
 
     if (this.isChecked) {
-      this.$counter.text(counterValue - 1)
+      this.$counter.text(--this.value)
     } else {
-      this.$counter.text(counterValue + 1)
+      this.$counter.text(++this.value)
     }
 
     this.$btn.toggleClass(CLASS_CHECKED);

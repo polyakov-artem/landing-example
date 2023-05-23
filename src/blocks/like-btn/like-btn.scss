@@ -40,7 +40,7 @@
     background-position: center;
   }
 
-  &__text {
+  &__counter {
     line-height: 1;
     font-size: rem(10px);
     color: $dark_opacity_25;
@@ -53,6 +53,10 @@
 
   &_checked {
     background-image: $gr-purple;
+
+    .like-btn__counter{
+      color: $purple-1;
+    }
 
     .like-btn__icon {
       background-image: url('~assets/svg/favorite-purple.svg?inline');

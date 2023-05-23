@@ -11,20 +11,21 @@ block content
     .grid
       .row
         .column.form-elements__column.form-elements__column-one
-
-          .form-elements__text-field.text-field.condition
+          .condition.form-elements__text-field
             span.condition__state default
-            h4.h3.text-field__title text-field
-            .input
-              input.input__control(type = 'email' placeholder = 'Email')
-          
-          .form-elements__text-field.text-field.condition
+            .text-field
+              h4.h3.text-field__title text-field
+              .input
+                input.input__control(type = 'email' placeholder = 'Email')
+            
+          .condition.form-elements__text-field
             span.condition__state hover / focus
-            h4.h3.text-field__title text-field
-            .input(type = 'text')
-              input.input__control.input__control_hovered(type = 'text' value = 'This is pretty awesome')
+            .text-field
+              h4.h3.text-field__title text-field
+              .input(type = 'text')
+                input.input__control.input__control_hovered(type = 'text' value = 'This is pretty awesome')
           
-          .form-elements__dropdown-field.dropdown-field
+          .dropdown-field.form-elements__dropdown-field
             h4.h3.dropdown-field__title dropdown
             .items-dropdown.plain-dropdown(data-dropdown-type='items')
               .input.plain-dropdown__toggle
